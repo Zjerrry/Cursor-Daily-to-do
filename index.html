@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issues · cursor/daily-todo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#">
+        <svg class="brand-mark" viewBox="0 0 16 16" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 4.77c.68.003 1.36.092 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          />
+        </svg>
+        <span>cursor</span>
+      </a>
+      <label class="search">
+        <span class="sr-only">Search Cursor</span>
+        <input type="search" placeholder="Type / to search Cursor" disabled />
+      </label>
+      <nav class="top-links" aria-label="Cursor product">
+        <span>Agent</span>
+        <span>Tab</span>
+        <span>MCP</span>
+        <span>Cloud</span>
+      </nav>
+    </header>
+
+    <div class="repo-header">
+      <div class="repo-title">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"
+          />
+        </svg>
+        <span class="muted">cursor</span>
+        <span class="slash">/</span>
+        <strong>daily-todo</strong>
+        <span class="public-badge">Public</span>
+      </div>
+      <p class="repo-desc">Daily issues for Cursor work: Agent, Tab, inline edit, MCP, Rules, and Cloud Agents.</p>
+    </div>
+
+    <nav class="repo-tabs" aria-label="Repository">
+      <button type="button" class="tab selected" data-filter="all" id="tab-issues">
+        Issues
+        <span id="issue-count" class="counter">0</span>
+      </button>
+      <button type="button" class="tab" data-feature="agent">Agent</button>
+      <button type="button" class="tab" data-feature="tab">Tab</button>
+      <button type="button" class="tab" data-feature="inline">Cmd+K</button>
+      <button type="button" class="tab" data-feature="mcp">MCP</button>
+      <button type="button" class="tab" data-feature="rules">Rules</button>
+      <button type="button" class="tab" data-feature="cloud">Cloud</button>
+      <button type="button" class="tab" data-feature="bugbot">Bugbot</button>
+    </nav>
+
+    <main class="layout">
+      <section class="issues">
+        <div class="toolbar">
+          <div class="state-tabs">
+            <button type="button" id="filter-open" class="state-tab selected">
+              <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                <path fill="currentColor" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+                <path
+                  fill="currentColor"
+                  d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Z"
+                />
+              </svg>
+              <span id="open-count">0</span> Open
+            </button>
+            <button type="button" id="filter-closed" class="state-tab">
+              <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M11.28 6.78a.75.75 0 0 0-1.06-1.06L7.25 8.69 5.78 7.22a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0Z"
+                />
+                <path
+                  fill="currentColor"
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-1.5 0a6.5 6.5 0 1 0-13 0 6.5 6.5 0 0 0 13 0Z"
+                />
+              </svg>
+              <span id="closed-count">0</span> Closed
+            </button>
+          </div>
+
+          <div class="date-nav">
+            <button type="button" id="prev-day" class="btn" aria-label="Previous day">Previous</button>
+            <p id="full-date" class="date-label"></p>
+            <button type="button" id="next-day" class="btn" aria-label="Next day">Next</button>
+            <button type="button" id="today-btn" class="btn">Today</button>
+          </div>
+        </div>
+
+        <form id="add-form" class="new-issue">
+          <label class="sr-only" for="task-input">New issue title</label>
+          <input
+            id="task-input"
+            type="text"
+            maxlength="160"
+            placeholder="Title — e.g. Wire MCP server into Agent"
+            autocomplete="off"
+          />
+          <label class="sr-only" for="feature-select">Cursor feature</label>
+          <select id="feature-select">
+            <option value="agent">Agent</option>
+            <option value="tab">Tab</option>
+            <option value="inline">Cmd+K</option>
+            <option value="mcp">MCP</option>
+            <option value="rules">Rules</option>
+            <option value="cloud">Cloud Agents</option>
+            <option value="bugbot">Bugbot</option>
+          </select>
+          <button type="submit" class="btn btn-primary">New issue</button>
+        </form>
+
+        <ul id="task-list" class="issue-list"></ul>
+        <div id="empty-state" class="empty-state">
+          <h2>No issues for this day</h2>
+          <p>Open a Cursor issue above. Label it Agent, Tab, Cmd+K, MCP, Rules, Cloud Agents, or Bugbot.</p>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <h2>About</h2>
+        <p>
+          A GitHub-style daily board for Cursor: Agent runs, Tab completions, Cmd+K edits, MCP tools, project Rules,
+          Cloud Agents, and Bugbot reviews.
+        </p>
+        <h2>Cursor features</h2>
+        <ul class="feature-topics">
+          <li><button type="button" data-feature="agent">Agent</button></li>
+          <li><button type="button" data-feature="tab">Tab</button></li>
+          <li><button type="button" data-feature="inline">Cmd+K</button></li>
+          <li><button type="button" data-feature="mcp">MCP</button></li>
+          <li><button type="button" data-feature="rules">Rules</button></li>
+          <li><button type="button" data-feature="cloud">Cloud Agents</button></li>
+          <li><button type="button" data-feature="bugbot">Bugbot</button></li>
+        </ul>
+        <h2>Checks</h2>
+        <div class="checks" aria-live="polite">
+          <div class="check-row">
+            <span>Progress</span>
+            <strong id="progress-label">0 / 0</strong>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="progress-bar" class="progress-bar"></div>
+          </div>
+          <p id="progress-percent" class="check-note">0% of daily issues closed</p>
+        </div>
+      </aside>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
